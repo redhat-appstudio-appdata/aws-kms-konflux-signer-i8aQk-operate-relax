@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: null
+  labels:
+    app.kubernetes.io/created-by: application-service
+    app.kubernetes.io/instance: signed-module
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/name: signed-module
+    app.kubernetes.io/part-of: aws-kms-konflux-signer
+  name: signed-module
+spec:
+  ports:
+  - port: 8080
+    targetPort: 8080
+  selector:
+    app.kubernetes.io/instance: signed-module
+status:
+  loadBalancer: {}
